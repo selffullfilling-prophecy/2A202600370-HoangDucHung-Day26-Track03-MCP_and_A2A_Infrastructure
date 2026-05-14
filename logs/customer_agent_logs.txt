@@ -1,0 +1,19 @@
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python -m customer_agent
+2026-05-14 23:25:03,602 [customer_agent] INFO HTTP Request: POST http://localhost:10000/register "HTTP/1.1 200 OK"
+2026-05-14 23:25:03,604 [customer_agent] INFO Registered with registry (attempt 1)
+2026-05-14 23:25:03,609 [customer_agent] INFO Customer Agent listening on port 10100
+INFO:     Started server process [10652]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10100 (Press CTRL+C to quit)
+2026-05-14 23:25:18,666 [customer_agent] WARNING Deprecated agent card endpoint '/.well-known/agent.json' accessed. Please use '/.well-known/agent-card.json' instead. This endpoint will be removed in a future version.
+INFO:     127.0.0.1:60263 - "GET /.well-known/agent.json HTTP/1.1" 200 OK
+2026-05-14 23:25:18,855 [customer_agent] INFO CustomerAgent executing | task=f3becfc6-303e-48f6-9714-e58a8ad12dda context=36d041dc-63be-4d7b-8a34-ed4a8927e767 trace=769bcf48-670d-46d6-ae0f-8062677f2e2c depth=0
+2026-05-14 23:25:19,367 [customer_agent] INFO Task not found or task_id not set. Creating new task for event (task_id: f3becfc6-303e-48f6-9714-e58a8ad12dda, context_id: 36d041dc-63be-4d7b-8a34-ed4a8927e767).
+2026-05-14 23:25:21,773 [customer_agent] INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-14 23:25:22,951 [customer_agent] INFO Customer delegate_to_legal_agent | trace=769bcf48-670d-46d6-ae0f-8062677f2e2c context=36d041dc-63be-4d7b-8a34-ed4a8927e767 depth=0
+2026-05-14 23:25:23,350 [customer_agent] INFO HTTP Request: GET http://localhost:10000/discover/legal_question "HTTP/1.1 200 OK"
+2026-05-14 23:25:23,749 [customer_agent] INFO HTTP Request: GET http://localhost:10101/.well-known/agent.json "HTTP/1.1 200 OK"
+2026-05-14 23:27:49,104 [customer_agent] INFO HTTP Request: POST http://localhost:10101 "HTTP/1.1 200 OK"
+2026-05-14 23:27:51,540 [customer_agent] INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60263 - "POST / HTTP/1.1" 200 OK

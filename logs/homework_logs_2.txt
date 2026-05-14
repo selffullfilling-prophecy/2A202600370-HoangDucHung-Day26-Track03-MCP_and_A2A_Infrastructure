@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.26100.3775]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Huy>cd F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure
+
+C:\Users\Huy>F:
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python test_client.py
+Connecting to Customer Agent at http://localhost:10100
+Question: If a company breaks a contract and avoids taxes, what are the legal and regulatory consequences?
+------------------------------------------------------------
+Connected to agent: Customer Agent v1.0.0
+------------------------------------------------------------
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\test_client.py:49: DeprecationWarning: A2AClient is deprecated and will be removed in a future version.Use ClientFactory to create a client with a JSON-RPC transport.
+  client = A2AClient(httpx_client=http_client, agent_card=agent_card)
+Sending request (this may take 30-60s while agents chain)...
+
+RESPONSE:
+============================================================
+---
+
+## Summary for You
+
+Our legal team has provided a comprehensive analysis of your question. Here are the key takeaways:
+
+### **Two Separate Legal Issues with Very Different Consequences:**
+
+**1. Contract Breach (Civil Matter)**
+- Handled through private lawsuits between parties
+- Results in monetary damages to compensate the injured party
+- Typical costs: $50,000-$500,000+ in legal fees
+- Timeline: 1-3 years to resolve
+- **No jail time** - this is a business dispute
+
+**2. Tax Evasion (Criminal Matter)**
+- This is a **federal crime** if the company is illegally evading taxes
+- Can result in **prison time** (up to 5 years per count)
+- Massive financial penalties: 75% fraud penalty + back taxes + interest + criminal fines
+- **Corporate officers can be personally prosecuted and imprisoned**
+- IRS conviction rate is approximately 90%
+
+### **Critical Distinction:**
+The analysis emphasizes that "tax avoidance" (legal tax planning) is very different from "tax evasion" (illegal fraud). If you meant legal tax planning, there are minimal consequences beyond the contract breach itself.
+
+### **If Both Occur Together:**
+- The company faces **both** civil lawsuits AND criminal prosecution
+- Financial exposure multiplies dramatically
+- Discovery in the contract case could expose tax fraud to the IRS
+- Corporate executives face personal criminal liability
+
+### **Immediate Actions Recommended:**
+1. **Hire specialized attorneys immediately** (tax attorney for tax issues, litigation attorney for contract breach)
+2. **Do not destroy any documents** (that's a separate crime)
+3. **Consider IRS voluntary disclosure** if tax issues exist but no investigation has started yet
+4. **Preserve attorney-client privilege** - this is critical for criminal exposure
+
+Do you have specific details about your situation that you'd like me to analyze further?
+============================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>

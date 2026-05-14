@@ -1,0 +1,20 @@
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python -m registry
+2026-05-14 23:24:29,560 [registry] INFO Starting Registry on port 10000
+INFO:     Started server process [18952]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:10000 (Press CTRL+C to quit)
+2026-05-14 23:24:38,746 [registry] INFO Registered agent 'tax-agent' at http://localhost:10102 (tasks=['tax_question'])
+INFO:     127.0.0.1:60242 - "POST /register HTTP/1.1" 200 OK
+2026-05-14 23:24:46,935 [registry] INFO Registered agent 'compliance-agent' at http://localhost:10103 (tasks=['compliance_question'])
+INFO:     127.0.0.1:60247 - "POST /register HTTP/1.1" 200 OK
+2026-05-14 23:24:53,264 [registry] INFO Registered agent 'law-agent' at http://localhost:10101 (tasks=['legal_question'])
+INFO:     127.0.0.1:60252 - "POST /register HTTP/1.1" 200 OK
+2026-05-14 23:25:03,600 [registry] INFO Registered agent 'customer-agent' at http://localhost:10100 (tasks=[])
+INFO:     127.0.0.1:60257 - "POST /register HTTP/1.1" 200 OK
+2026-05-14 23:25:23,348 [registry] INFO Discovered agent 'law-agent' for task 'legal_question'
+INFO:     127.0.0.1:60266 - "GET /discover/legal_question HTTP/1.1" 200 OK
+2026-05-14 23:26:05,105 [registry] INFO Discovered agent 'tax-agent' for task 'tax_question'
+INFO:     127.0.0.1:60277 - "GET /discover/tax_question HTTP/1.1" 200 OK
+2026-05-14 23:26:05,107 [registry] INFO Discovered agent 'compliance-agent' for task 'compliance_question'
+INFO:     127.0.0.1:60278 - "GET /discover/compliance_question HTTP/1.1" 200 OK

@@ -1,0 +1,1263 @@
+Microsoft Windows [Version 10.0.26100.3775]
+(c) Microsoft Corporation. All rights reserved.
+
+F:\hoc\vin>git clone https://github.com/Huygiacu123/Day26-Track03-MCP_and_A2A_Infrastructure
+Cloning into 'Day26-Track03-MCP_and_A2A_Infrastructure'...
+remote: Enumerating objects: 93, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 93 (delta 10), reused 9 (delta 9), pack-reused 74 (from 1)
+Receiving objects: 100% (93/93), 265.19 KiB | 1.14 MiB/s, done.
+Resolving deltas: 100% (27/27), done.
+
+F:\hoc\vin>cd legal_multiagent
+The system cannot find the path specified.
+
+F:\hoc\vin>cd Day26
+The system cannot find the path specified.
+
+F:\hoc\vin>cd Day26-Track03-MCP_and_A2A_Infrastructure
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>cd legal_multiagent
+The system cannot find the path specified.
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv sync
+Using CPython 3.13.9 interpreter at: C:\Users\Huy\anaconda3\python.exe
+Creating virtual environment at: .venv
+Resolved 71 packages in 0.92ms
+      Built legal-multiagent @ file:///F:/hoc/vin/Day26-Track03-MCP_and_A2A_Infrastructure
+Prepared 71 packages in 2.77s
+░░░░░░░░░░░░░░░░░░░░ [0/71] Installing wheels...                                                                        warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 71 packages in 3.85s
+ + a2a-sdk==0.3.26
+ + annotated-doc==0.0.4
+ + annotated-types==0.7.0
+ + anyio==4.13.0
+ + cairocffi==1.7.1
+ + cairosvg==2.9.0
+ + certifi==2026.4.22
+ + cffi==2.0.0
+ + charset-normalizer==3.4.7
+ + click==8.3.3
+ + colorama==0.4.6
+ + cryptography==48.0.0
+ + cssselect2==0.9.0
+ + defusedxml==0.7.1
+ + distro==1.9.0
+ + fastapi==0.136.1
+ + google-api-core==2.30.3
+ + google-auth==2.52.0
+ + googleapis-common-protos==1.75.0
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + httpx-sse==0.4.3
+ + idna==3.15
+ + jiter==0.14.0
+ + jsonpatch==1.33
+ + jsonpointer==3.1.1
+ + langchain-core==1.4.0
+ + langchain-openai==1.2.1
+ + langchain-protocol==0.0.15
+ + langgraph==1.2.0
+ + langgraph-checkpoint==4.1.0
+ + langgraph-prebuilt==1.1.0
+ + langgraph-sdk==0.3.14
+ + langsmith==0.8.3
+ + legal-multiagent==0.1.0 (from file:///F:/hoc/vin/Day26-Track03-MCP_and_A2A_Infrastructure)
+ + lxml==6.1.0
+ + openai==2.36.0
+ + orjson==3.11.9
+ + ormsgpack==1.12.2
+ + packaging==26.2
+ + pillow==12.2.0
+ + proto-plus==1.28.0
+ + protobuf==6.33.6
+ + pyasn1==0.6.3
+ + pyasn1-modules==0.4.2
+ + pycparser==3.0
+ + pydantic==2.13.4
+ + pydantic-core==2.46.4
+ + python-dotenv==1.2.2
+ + python-pptx==1.0.2
+ + pyyaml==6.0.3
+ + regex==2026.5.9
+ + requests==2.34.0
+ + requests-toolbelt==1.0.0
+ + sniffio==1.3.1
+ + sse-starlette==3.4.4
+ + starlette==1.0.0
+ + tenacity==9.1.4
+ + tiktoken==0.12.0
+ + tinycss2==1.5.1
+ + tqdm==4.67.3
+ + typing-extensions==4.15.0
+ + typing-inspection==0.4.2
+ + urllib3==2.7.0
+ + uuid-utils==0.15.0
+ + uvicorn==0.46.0
+ + webencodings==0.5.1
+ + xlsxwriter==3.2.9
+ + xxhash==3.7.0
+ + zstandard==0.25.0
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>copy .env.example .env
+        1 file(s) copied.
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python stages/stage_1_direct_llm/main.py
+======================================================================
+STAGE 1: Direct LLM Calling
+======================================================================
+
+[How it works]
+  1. We send a system prompt + user question directly to the LLM
+  2. The LLM responds from its training data only
+  3. No tools, no retrieval, no external knowledge
+
+Question: What are the legal consequences if a company breaches a non-disclosure agreement?
+----------------------------------------------------------------------
+
+>>> Calling LLM directly (no tools, no RAG)...
+
+Traceback (most recent call last):
+  File "F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_1_direct_llm\main.py", line 68, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_1_direct_llm\main.py", line 51, in main
+    response = await llm.ainvoke(messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 497, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1834, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+        prompt_messages, stop=stop, callbacks=callbacks, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1792, in agenerate
+    raise exceptions[0]
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2127, in _agenerate_with_cache
+    result = await self._agenerate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+        messages, stop=stop, run_manager=run_manager, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1925, in _agenerate
+    _handle_openai_api_error(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1918, in _agenerate
+    raw_response = await self.async_client.with_raw_response.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **payload
+        ^^^^^^^^^
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\openai\_legacy_response.py", line 384, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2739, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\openai\_base_client.py", line 1931, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\openai\_base_client.py", line 1716, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - {'error': {'message': 'This request requires more credits, or fewer max_tokens. You requested up to 64000 tokens, but can only afford 2666. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account', 'code': 402, 'metadata': {'provider_name': None}}, 'user_id': 'user_2wzaJYkrJLxDJ4dYrHebhXPtr2P'}
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python stages/stage_1_direct_llm/main.py
+======================================================================
+STAGE 1: Direct LLM Calling
+======================================================================
+
+[How it works]
+  1. We send a system prompt + user question directly to the LLM
+  2. The LLM responds from its training data only
+  3. No tools, no retrieval, no external knowledge
+
+Question: What are the legal consequences if a company breaches a non-disclosure agreement?
+----------------------------------------------------------------------
+
+>>> Calling LLM directly (no tools, no RAG)...
+
+# Legal Consequences of Breaching a Non-Disclosure Agreement (NDA)
+
+When a company breaches an NDA, it may face several significant legal consequences:
+
+## 1. **Monetary Damages**
+- **Compensatory damages**: The injured party can recover actual financial losses resulting from the breach
+- **Consequential damages**: Additional losses that were foreseeable at the time of contract formation
+- **Liquidated damages**: If specified in the NDA, a predetermined amount payable upon breach
+
+## 2. **Injunctive Relief**
+Courts may issue:
+- **Temporary restraining orders** to immediately stop disclosure
+- **Preliminary or permanent injunctions** preventing further use or dissemination of confidential information
+- Orders requiring return or destruction of confidential materials
+
+## 3. **Punitive Damages**
+In cases involving willful or malicious breach, courts may award punitive damages to punish the breaching party and deter future misconduct.
+
+## 4. **Disgorgement of Profits**
+The breaching company may be required to surrender any profits gained from unauthorized use of the confidential information.
+
+## 5. **Reputation Damage**
+Beyond legal penalties, breach can result in:
+- Loss of business relationships
+- Difficulty securing future NDAs or partnerships
+- Industry-wide reputation harm
+
+## 6. **Criminal Liability**
+In extreme cases involving trade secrets, breach may trigger criminal prosecution under laws like the Economic Espionage Act (in the U.S.).
+
+## Key Considerations
+The specific consequences depend on:
+- NDA terms and applicable jurisdiction
+- Nature and severity of the breach
+- Type of information disclosed
+- Harm caused to the non-breaching party
+
+**Prevention is crucial**: Companies should implement robust confidentiality protocols and seek legal counsel when entering NDAs.
+
+----------------------------------------------------------------------
+[Limitations of Stage 1]
+  - Stateless: no conversation memory between calls
+  - No tools: cannot search databases or calculate damages
+  - Knowledge cutoff: only knows what was in training data
+  - No grounding: cannot cite specific statutes or current case law
+
+Next: Stage 2 adds RAG and tools to ground responses in real data.
+======================================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python stages/stage_2_rag_tools/main.py
+======================================================================
+STAGE 2: LLM + RAG / Tools
+======================================================================
+
+[How it works]
+  1. LLM receives tools (search_legal_database, calculate_damages)
+  2. LLM decides which tools to call and with what arguments
+  3. We execute the tools and feed results back to the LLM
+  4. LLM generates a final answer grounded in retrieved data
+
+Question: What are the legal consequences if a company breaches a non-disclosure agreement?
+----------------------------------------------------------------------
+
+>>> Step 1: Asking LLM (with tools bound)...
+
+>>> Step 2: LLM requested 1 tool call(s):
+
+  Tool: search_legal_database
+  Args: {'query': 'breach of non-disclosure agreement NDA legal consequences remedies'}
+  Result: [nda_trade_secret] NDA breaches may trigger both contractual and statutory liability. Under the Defend Trade Secrets Act (DTSA, 18 U.S.C. § 1836), misappropriation of trade secrets can result in: (1) ...
+
+>>> Step 3: LLM generating final answer with tool results...
+
+Based on the legal research, here are the key legal consequences when a company breaches a non-disclosure agreement:
+
+## Civil Remedies
+
+**1. Injunctive Relief**
+Courts can issue immediate injunctions to prevent further disclosure or use of confidential information. This is often the most critical remedy to stop ongoing harm.
+
+**2. Monetary Damages**
+The non-breaching party can recover:
+- **Actual damages** for measurable losses caused by the breach
+- **Unjust enrichment** - any profits the breaching company gained from misusing the confidential information
+- **Consequential damages** for foreseeable losses resulting from the breach (following the *Hadley v. Baxendale* standard)
+
+**3. Enhanced Damages**
+For willful and malicious breaches, courts may award **exemplary damages up to twice the actual damages** under the Defend Trade Secrets Act (18 U.S.C. § 1836).
+
+**4. Attorney's Fees**
+The prevailing party may recover legal costs, particularly in cases involving trade secret misappropriation.
+
+## Statutory Protection
+
+If the NDA protects trade secrets, additional remedies are available under:
+- **Federal Defend Trade Secrets Act (DTSA)** - provides nationwide protection
+- **State Uniform Trade Secrets Act (UTSA)** - offers parallel state-level remedies
+
+## Criminal Consequences
+
+In serious cases involving trade secrets, criminal prosecution is possible under the **Economic Espionage Act** (18 U.S.C. § 1832), with potential penalties including:
+- Fines up to **$5 million** for organizations
+- Prison sentences for individuals
+- Criminal forfeiture of property
+
+## Business Impact
+
+Beyond legal penalties, breaching companies face:
+- Reputational damage
+- Loss of business relationships
+- Difficulty securing future NDAs or partnerships
+- Potential loss of competitive advantages
+
+The severity of consequences depends on factors like the nature of information disclosed, whether the breach was intentional, the harm caused, and whether trade secrets were involved. Companies should take NDA obligations seriously and implement robust confidentiality protocols to avoid these significant legaland business consequences.
+
+----------------------------------------------------------------------
+[Improvements over Stage 1]
+  + Grounded: answers cite specific statutes (DTSA, UCC, etc.)
+  + Tool use: can search databases and calculate damages
+  + More accurate: retrieval reduces hallucination risk
+
+[Limitations of Stage 2]
+  - Manual orchestration: we wrote the tool-call loop ourselves
+  - Single pass: only one round of tool calls
+  - No reasoning loop: LLM can't decide to search again if needed
+
+Next: Stage 3 wraps this in an autonomous ReAct agent loop.
+======================================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python stages/stage_3_single_agent/main.py
+======================================================================
+STAGE 3: Single Agent (ReAct Loop)
+======================================================================
+
+[How it works]
+  1. An autonomous agent receives a complex multi-part question
+  2. It reasons about what tools to call (Think)
+  3. It calls a tool (Act)
+  4. It observes the result and decides next steps (Observe)
+  5. It repeats until it has enough information for a final answer
+
+Question: A tech startup with $5M revenue was caught sharing user data without consent and failed to pay taxes on overseas revenue. What are all the legal consequences?
+----------------------------------------------------------------------
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_3_single_agent\main.py:208: LangGraphDeprecatedSinceV10: create_react_agent has been movedto `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  graph = create_react_agent(model=llm, tools=TOOLS, prompt=SYSTEM_PROMPT)
+
+[Step 1] THINK + ACT (node: agent)
+  Tool: search_legal_database
+  Args: {'query': 'sharing user data without consent privacy violations penalties'}
+  Tool: search_legal_database
+  Args: {'query': 'failure to pay taxes on overseas revenue tax evasion penalties'}
+  Tool: search_legal_database
+  Args: {'query': 'tech startup regulatory compliance requirements data protection'}
+  Tool: check_compliance_requirements
+  Args: {'industry': 'technology', 'company_size': 'startup'}
+  Tool: calculate_penalty
+  Args: {'violation_type': 'data_privacy', 'severity': 'high', 'annual_revenue': 5000000}
+  Tool: calculate_penalty
+  Args: {'violation_type': 'tax_evasion', 'severity': 'high', 'annual_revenue': 5000000}
+
+[Step 2] OBSERVE (node: tools)
+  Result: [data_privacy] Sharing user data without consent violates: CCPA (fines up to $7,500 per intentional violation), GDPR (fines up to 4% of global revenue or EUR 20M), FTC Act Section 5 (unfair/deceptive practices). Class action lawsuits under state privacy laws. Individual right of action under CCPA fo...
+
+[Step 3] OBSERVE (node: tools)
+  Result: [tax_evasion] Tax evasion (26 U.S.C. § 7201): felony with up to $250K fine and 5 years prison. Civil fraud penalty: 75% of underpayment (IRC § 6663). Failure to file: up to $25K fine and 1 year prison. IRS can assess back taxes + interest going back 6 years (unlimited for fraud). Officers may be per...
+
+[Step 4] OBSERVE (node: tools)
+  Result: [data_privacy] Sharing user data without consent violates: CCPA (fines up to $7,500 per intentional violation), GDPR (fines up to 4% of global revenue or EUR 20M), FTC Act Section 5 (unfair/deceptive practices). Class action lawsuits under state privacy laws. Individual right of action under CCPA fo...
+
+[Step 5] OBSERVE (node: tools)
+  Result: Applicable frameworks for technology (startup):
+  CCPA/CPRA, GDPR (if EU users), FTC Act Section 5, SOC 2
+  Consider: SOC 2 Type II for investor confidence.
+
+[Step 6] OBSERVE (node: tools)
+  Result: Penalty Estimate for data_privacy (high severity):
+  Base penalty: $500,000.00
+  Revenue basis: $5,000,000.00
+  Plus GDPR fines up to 4% of global revenue and class action exposure.
+
+[Step 7] OBSERVE (node: tools)
+  Result: Penalty Estimate for tax_evasion (high severity):
+  Base penalty: $500,000.00
+  Revenue basis: $5,000,000.00
+  Plus potential criminal charges (up to 5 years) and 75% civil fraud penalty.
+
+[Step 8] FINAL ANSWER (node: agent)
+----------------------------------------------------------------------
+## Comprehensive Legal Analysis
+
+Your tech startup faces severe consequences across multiple legal domains:
+
+### **Data Privacy Violations**
+
+**Regulatory Penalties:**
+- **CCPA**: Up to $7,500 per intentional violation; estimated base penalty of **$500,000**
+- **GDPR** (if serving EU users): Up to **4% of global revenue ($200,000)** or €20M
+- **FTC Act Section 5**: Enforcement action for unfair/deceptive practices
+
+**Civil Liability:**
+- Class action lawsuits under state privacy laws
+- Individual consumer claims: $100-$750 per affected user under CCPA
+- Potential damages could reach millions depending on number of users affected
+
+### **Tax Evasion Consequences**
+
+**Criminal Exposure:**
+- Federal felony charges (26 U.S.C. § 7201): Up to **$250,000 fine and 5 years imprisonment**
+- Failure to file charges: Up to $25,000 and 1 year imprisonment
+- **Officers/executives face personal criminal liability**
+
+**Civil Penalties:**
+- Estimated base penalty: **$500,000**
+- **75% fraud penalty** on the entire tax underpayment
+- Back taxes owed plus compounding interest (6+ years lookback)
+- FBAR penalties for unreported foreign accounts: Up to **$100,000 or 50% of account balance** per violation
+- FATCA non-compliance: 30% withholding on US-source payments
+
+### **Compliance Requirements**
+
+As a tech startup, you must comply with:
+- CCPA/CPRA (California users)
+- GDPR (EU users)
+- FTC Act Section 5
+- SOC 2 certification (for investor confidence)
+
+### **Additional Risks**
+
+- **Reputational damage** affecting customer trust and investor relations
+- **SEC investigation** if financial statements misrepresented revenue
+- **Personal liability** for founders/officers as "responsible persons"
+- **Debarment** from government contracts
+- Difficulty raising future capital
+
+### **Total Financial Exposure**
+
+Conservative estimate: **$1.5M - $3M+** in combined penalties, plus back taxes, interest, and legal defense costs potentially exceeding the company's annual revenue.
+
+### **Immediate Actions Required**
+
+1. Retain specialized tax and privacy counsel immediately
+2. Consider IRS Voluntary Disclosure Program
+3. Cease unauthorized data sharing
+4. Implement comprehensive privacy compliance program
+5. Prepare for potential criminal defense
+
+The combination of willful tax evasion and privacy violations creates existential risk for the company and personal criminal exposure for leadership.
+
+----------------------------------------------------------------------
+[Improvements over Stage 2]
+  + Autonomous: agent decides which tools to call and when
+  + Multi-step reasoning: can search, calculate, search again
+  + Handles complex queries: breaks problems into sub-tasks
+
+[Limitations of Stage 3]
+  - Single agent: one LLM handles all domains (law, tax, compliance)
+  - No specialisation: same system prompt for all legal areas
+  - Bottleneck: sequential tool calls, no parallelism
+
+Next: Stage 4 splits this into specialised agents that work in parallel.
+======================================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python stages/stage_4_milti_agent/main.py
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_4_milti_agent\main.py:103: LangGraphDeprecatedSinceV10: Importing Send from langgraph.constants is deprecated. Please use 'from langgraph.types import Send' instead. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  from langgraph.constants import Send
+======================================================================
+STAGE 4: Multi-Agent System (In-Process)
+======================================================================
+
+[How it works]
+  1. Lead attorney agent analyses the question
+  2. Router decides which specialist agents are needed
+  3. Tax + Compliance specialists run IN PARALLEL (LangGraph Send API)
+  4. Aggregator combines all analyses into a final answer
+
+[Graph topology]
+  analyze_law -> check_routing -> [call_tax + call_compliance] -> aggregate -> END
+
+Question: If a company breaks a contract and avoids taxes, what are the legal and regulatory consequences?
+----------------------------------------------------------------------
+
+  [Node: analyze_law] Lead attorney analysing legal aspects...
+  [Node: analyze_law] Done (1477 chars)
+
+  [Node: check_routing] Determining which specialists are needed...
+  [Node: check_routing] needs_tax=True, needs_compliance=True
+
+  [Node: call_tax_specialist] Tax specialist agent starting...
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_4_milti_agent\main.py:208: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_react_agent(model=llm, tools=[search_tax_law], prompt=tax_prompt)
+
+  [Node: call_compliance_specialist] Compliance specialist agent starting...
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\stages\stage_4_milti_agent\main.py:230: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  agent = create_react_agent(model=llm, tools=[search_compliance_law], prompt=compliance_prompt)
+  [Node: call_compliance_specialist] Done (1305 chars)
+  [Node: call_tax_specialist] Done (1266 chars)
+
+  [Node: aggregate] Combining all specialist analyses...
+  [Node: aggregate] Done (3086 chars)
+
+======================================================================
+FINAL ANSWER
+======================================================================
+# COMPREHENSIVE LEGAL ANALYSIS: TAX EVASION AND CONTRACT BREACH CONSEQUENCES
+
+## I. TAX EVASION CONSEQUENCES
+
+### Criminal Penalties
+Under 26 U.S.C. § 7201, willful tax evasion constitutes a felony with severe consequences:
+- **Corporate fines**: Up to $500,000 per violation
+- **Individual imprisonment**: Up to 5 years for responsible officers
+- **Individual fines**: Up to $250,000 per violation
+- Prosecution requires proof of willful intent to defraud
+
+### Civil Penalties
+The IRS imposes substantial civil penalties including:
+- **IRC § 6663**: 75% fraud penalty on tax underpayments
+- **IRC § 6662**: 20% accuracy-related penalties for negligence or substantial understatements
+- **IRC § 6651**: Failure-to-file/pay penalties (up to 25%)
+- **IRC § 482**: Transfer pricing adjustments with 20-40% valuation misstatement penalties
+- Full back taxes plus compounding interest
+- Enhanced scrutiny of future filings and increased audit risk
+
+## II. CONTRACT BREACH CONSEQUENCES
+
+Contract breaches are primarily civil matters involving:
+- **Compensatory damages**: Direct losses from breach
+- **Consequential damages**: Foreseeable indirect losses
+- **Specific performance**: Court-ordered contract fulfillment
+- **Punitive damages**: Available if fraud is proven
+- Litigation costs including legal fees and settlement expenses
+- Reputational damage affecting business relationships and creditworthiness
+
+## III. REGULATORY AND SECURITIES IMPLICATIONS
+
+For publicly traded companies, additional consequences include:
+- **SOX violations**: False financial certifications under § 906 carry up to $5M fines and 20 years imprisonment
+- **SEC enforcement**: Material misstatements trigger securities law violations, potential officer/director bars
+- **Disclosure obligations**: Material breaches and tax issues require SEC disclosure
+- **FCPA violations**: If tax evasion involves foreign payments
+
+## IV. COMBINED IMPACT AND AGGRAVATING FACTORS
+
+When tax evasion and contract breach coincide:
+- **Piercing corporate veil**: Personal liability for officers/directors in egregious cases
+- **Parallel proceedings**: Simultaneous civil, criminal, and regulatory actions
+- **Regulatory sanctions**: License revocations, government contract debarment
+- **Bankruptcy risk**: Cumulative financial strain from penalties, damages, and legal costs
+- **State-level consequences**: Additional penalties and enforcement actions
+
+## V. CRITICAL DISTINCTIONS AND MITIGATION
+
+**Tax Avoidance vs. Evasion**: Legal tax minimization differs fundamentally from illegal concealment. The IRS may recharacterize aggressive avoidance schemes.
+
+**Recommended Mitigation Strategies**:
+- Immediate voluntary disclosure to IRS
+- Engage experienced legal counsel
+- Conduct comprehensive internal investigation
+- Implement enhanced compliance controls
+- Pursue settlement negotiations where appropriate
+- Demonstrate cooperation with authorities
+
+**Severity Factors**: Consequences depend on intent (negligence vs. willful misconduct), amounts involved, duration of violations, and level of cooperationwith authorities.
+
+----------------------------------------------------------------------
+[Improvements over Stage 3]
+  + Specialisation: each agent has domain-specific expertise
+  + Parallel execution: tax + compliance agents run concurrently
+  + Better quality: specialist prompts produce deeper analysis
+  + Structured flow: explicit graph topology with routing logic
+
+[Stage 4 (Monolith) vs Stage 5 (Distributed A2A)]
+  +---------------------------+-------------------------------+
+  | Stage 4 (In-Process)      | Stage 5 (A2A Protocol)        |
+  +---------------------------+-------------------------------+
+  | Single process            | Multiple services (ports)     |
+  | Direct function calls     | HTTP-based A2A protocol       |
+  | Shared memory             | Message passing               |
+  | Simple deployment         | Independent scaling           |
+  | Tight coupling            | Loose coupling                |
+  | Easy to debug             | Service discovery + registry  |
+  | Good for small teams      | Good for large organisations  |
+  +---------------------------+-------------------------------+
+
+Stage 5 (this repo's main project) takes this same graph topology
+and deploys each agent as an independent A2A service. Run it with:
+  ./start_all.sh && python test_client.py
+======================================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>./start_all.sh
+'.' is not recognized as an internal or external command,
+operable program or batch file.
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>wsl
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu May 14 22:56:25 +07 2026
+
+  System load:  0.88                Processes:             75
+  Usage of /:   1.1% of 1006.85GB   Users logged in:       0
+  Memory usage: 5%                  IPv4 address for eth0: 172.22.100.247
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/huy/.hushlogin file.
+huy@DESKTOP-9ELGKTU:/mnt/f/hoc/vin/Day26-Track03-MCP_and_A2A_Infrastructure$ ./start_all.sh
+-bash: ./start_all.sh: /bin/bash^M: bad interpreter: No such file or directory
+huy@DESKTOP-9ELGKTU:/mnt/f/hoc/vin/Day26-Track03-MCP_and_A2A_Infrastructure$ ls
+CODELAB.md           README.md         customer_agent  law_agent       stages        test_client.py
+INSTRUCTOR_GUIDE.md  common            docs            pyproject.toml  start_all.sh  uv.lock
+QUICK_REFERENCE.md   compliance_agent  exercises       registry        tax_agent
+huy@DESKTOP-9ELGKTU:/mnt/f/hoc/vin/Day26-Track03-MCP_and_A2A_Infrastructure$ exit
+logout
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>bash start_all.sh
+: invalid optionne 2: set: -
+set: usage: set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+start_all.sh: line 3: $'\r': command not found
+start_all.sh: line 6: $'\r': command not found
+Starting Registry service on port 10000...
+start_all.sh: line 8: $'\r': command not found
+start_all.sh: line 8: python: command not found
+sleep: invalid time interval ‘2\r’
+Try 'sleep --help' for more information.
+start_all.sh: line 11: $'\r': command not found
+Starting Tax Agent on port 10102...
+start_all.sh: line 13: $'\r': command not found
+start_all.sh: line 13: python: command not found
+start_all.sh: line 15: $'\r': command not found
+Starting Compliance Agent on port 10103...
+start_all.sh: line 17: $'\r': command not found
+start_all.sh: line 17: python: command not found
+sleep: invalid time interval ‘3\r’
+Try 'sleep --help' for more information.
+start_all.sh: line 20: $'\r': command not found
+Starting Law Agent on port 10101...
+start_all.sh: line 22: python: command not found
+start_all.sh: line 22: $'\r': command not found
+sleep: invalid time interval ‘3\r’
+Try 'sleep --help' for more information.
+start_all.sh: line 25: $'\r': command not found
+Starting Customer Agent on port 10100...
+start_all.sh: line 27: $'\r': command not found
+start_all.sh: line 27: python: command not found
+start_all.sh: line 29: $'\r': command not found
+
+All services started:
+  Registry:         http://localhost:10000
+  Customer Agent:   http://localhost:10100
+  Law Agent:        http://localhost:10101
+  Tax Agent:        http://localhost:10102
+  Compliance Agent: http://localhost:10103
+
+Run test_client.py to send a query:
+  python test_client.py
+
+Press Ctrl+C to stop all services.
+start_all.sh: line 42: $'\r': command not found
+': not a pid or valid job spec361
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>bash start_all.sh
+Starting Registry service on port 10000...
+start_all.sh: line 8: python: command not found
+Starting Tax Agent on port 10102...
+Starting Compliance Agent on port 10103...
+start_all.sh: line 17: python: command not found
+start_all.sh: line 13: python: command not found
+Starting Law Agent on port 10101...
+start_all.sh: line 22: python: command not found
+Starting Customer Agent on port 10100...
+
+All services started:
+  Registry:         http://localhost:10000
+  Customer Agent:   http://localhost:10100
+  Law Agent:        http://localhost:10101
+  Tax Agent:        http://localhost:10102
+  Compliance Agent: http://localhost:10103
+
+Run test_client.py to send a query:
+  python test_client.py
+
+Press Ctrl+C to stop all services.
+start_all.sh: line 27: python: command not found
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>bash start_all.sh
+Starting Registry service on port 10000...
+start_all.sh: line 8: uv: command not found
+Starting Tax Agent on port 10102...
+Starting Compliance Agent on port 10103...
+start_all.sh: line 13: uv: command not found
+start_all.sh: line 17: uv: command not found
+Starting Law Agent on port 10101...
+start_all.sh: line 22: uv: command not found
+Starting Customer Agent on port 10100...
+
+All services started:
+  Registry:         http://localhost:10000
+  Customer Agent:   http://localhost:10100
+  Law Agent:        http://localhost:10101
+  Tax Agent:        http://localhost:10102
+  Compliance Agent: http://localhost:10103
+
+Run test_client.py to send a query:
+  uv run python test_client.py
+
+Press Ctrl+C to stop all services.
+start_all.sh: line 27: uv: command not found
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv --version
+uv 0.11.14 (3fdfdc7d4 2026-05-12 x86_64-pc-windows-msvc)
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>bash which uv
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>where uv
+C:\Users\Huy\.local\bin\uv.exe
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>bash start_all.sh
+Starting Registry service on port 10000...
+start_all.sh: line 10: /c/Users/Huy/.local/bin/uv.exe: No such file or directory
+Starting Tax Agent on port 10102...
+start_all.sh: line 15: /c/Users/Huy/.local/bin/uv.exe: No such file or directory
+Starting Compliance Agent on port 10103...
+start_all.sh: line 19: /c/Users/Huy/.local/bin/uv.exe: No such file or directory
+Starting Law Agent on port 10101...
+start_all.sh: line 24: /c/Users/Huy/.local/bin/uv.exe: No such file or directory
+Starting Customer Agent on port 10100...
+start_all.sh: line 29: /c/Users/Huy/.local/bin/uv.exe: No such file or directory
+
+All services started:
+  Registry:         http://localhost:10000
+  Customer Agent:   http://localhost:10100
+  Law Agent:        http://localhost:10101
+  Tax Agent:        http://localhost:10102
+  Compliance Agent: http://localhost:10103
+
+Run test_client.py to send a query:
+  uv run python test_client.py
+
+Press Ctrl+C to stop all services.
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python exercises/exercise_2_tools.py
+Câu hỏi: Thời hiệu khởi kiện vụ vi phạm hợp đồng là bao lâu?
+
+🔧 Gọi tool: search_legal_knowledge
+
+✅ Kết quả:
+
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python exercises/exercise_4_multiagent.py
+======================================================================
+MULTI-AGENT SYSTEM với Privacy Agent
+======================================================================
+
+Câu hỏi: Nếu công ty bị rò rỉ dữ liệu khách hàng, hậu quả pháp lý và thuế là gì?
+
+Đang xử lý qua các agents...
+
+Traceback (most recent call last):
+  File "F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\exercises\exercise_4_multiagent.py", line 186, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Huy\anaconda3\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\exercises\exercise_4_multiagent.py", line 169, in main
+    result = await graph.ainvoke({
+             ^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    })
+    ^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\main.py", line 4057, in ainvoke
+    async for chunk in self.astream(
+    ...<30 lines>...
+            chunks.append(chunk)
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3407, in astream
+    async for _ in runner.atick(
+    ...<16 lines>...
+            yield o
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 396, in atick
+    await arun_with_retry(
+    ...<15 lines>...
+    )
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 706, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 739, in ainvoke
+    input = await step.ainvoke(input, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 501, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\_write.py", line 99, in _awrite
+    self.do_write(
+    ~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+        writes,
+        ^^^^^^^
+    )
+    ^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\_write.py", line 126, in do_write
+    write(_assemble_writes(writes))
+          ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\pregel\_write.py", line 181, in _assemble_writes
+    if ww := w.mapper(w.value):
+             ~~~~~~~~^^^^^^^^^
+  File "f:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\.venv\Lib\site-packages\langgraph\graph\state.py", line 1479, in _get_updates
+    raise InvalidUpdateError(msg)
+langgraph.errors.InvalidUpdateError: Expected dict, got [Send(node='tax_agent', arg={'question': 'Nếu công ty bị rò rỉ dữ liệu khách hàng, hậu quả pháp lý và thuế là gì?', 'law_analysis': '# PHÂN TÍCH PHÁP LÝ: RÒ RỈ DỮ LIỆU KHÁCH HÀNG\n\n## I. TRÁCH NHIỆM DÂN SỰ\n\n### 1. **Bồi thường thiệt hại cho khách hàng**\n- **Căn cứ**: Điều 584 Bộ luật Dân sự 2015\n- **Phạm vi bồi thường**:\n  - Thiệt hại vật chất trực tiếp (tài chính, tài sản)\n  - Thiệt hại tinh thần (danh dự, uy tín)\n  - Chi phí khắc phục hậu quả\n  - Lợi ích bị mất do rò rỉ dữ liệu\n\n### 2. **Trách nhiệm nghiêm ngặt**\n- Công ty phải chứng minh KHÔNG CÓLỖI mới được miễn trách nhiệm\n- Không thể viện dẫn "bất khả kháng" nếu thiếu biện pháp bảo mật\n\n## II. TRÁCH NHIỆM HỢP ĐỒNG\n\n### 1. **Vi phạm hợp đồngvới khách hàng**\n- **Điều khoản bảo mật**: Thường có trong hợp đồng dịch vụ\n- **Hậu quả**:\n  - Khách hàng có quyền đơn phương chấm dứt hợp đồng\n  - Bồithường theo thỏa thuận (có thể gấp nhiều lần giá trị hợp đồng)\n  - Mất uy tín, khách hàng rời bỏ\n\n### 2. **Trách nhiệm với đối tác**\n- Vi phạm cam kết bảo mật trong hợp đồng B2B\n- Có thể bị đối tác khởi kiện\n\n## III. TRÁCH NHIỆM HÀNH CHÍNH\n\n### 1. **Phạt vi phạm bảo vệ dữ liệu cá nhân**\n**Nghị định 13/2023/NĐ-CP** (có hiệu lực từ 1/7/2023):\n\n| Mức độ vi phạm | Mức phạt | Ghi chú |\n|----------------|----------|---------|\n| Vi phạm nghĩa vụ bảo vệ DLCN | 50-100 triệu đồng | Điều 15 |\n| Để xảy ra rò rỉ, mất dữ liệu | 100-150 triệu đồng | Điều 16 |\n| Vi phạm nghiêm trọng | Đình chỉ hoạt động 3-6 tháng | |\n\n### 2. **Biện pháp khắc phục bắt buộc**\n- Thông báo cho cơ quan quản lý trong 72 giờ\n- Thông báo cho khách hàng bị ảnh hưởng\n- Khắc phục lỗ hổng bảomật\n- Báo cáo biện pháp phòng ngừa\n\n## IV. TRÁCH NHIỆM HÌNH SỰ\n\n### **Tội "Chiếm đoạt, mua bán trái phép thông tin về tài khoản"**\n- **Điều 290 Bộ luật Hình sự 2015**\n- **Đối tượng**: Người có trách nhiệm quản lý dữ liệu\n- **Hình phạt**: \n  - Phạt tiền 50-200 triệu đồng\n  - Hoặc phạt tù đến 7 năm (nếu nghiêm trọng)\n  - Cấm đảm nhiệm chức vụ 1-5 năm\n\n## V. NGHĨA VỤ PHÁP LÝ CỦA CÔNG TY\n\n### 1. **Trước khi xảy ra sự cố**\n✅ Xây dựng hệ thống bảo mật phù hợp  \n✅ Đào tạo nhân viên về bảo vệ dữ liệu  \n✅ Ký cam kết bảo mật với nhân viên  \n✅ Mua bảo hiểm trách nhiệm nghề nghiệp  \n✅ Có phương án ứng phó sự cố  \n\n### 2. **Khi xảy ra rò rỉ**\n⚠️ **Trong 72 giờ**:\n- Báo cáo Cục An toàn thông tin (Bộ TT&TT)\n- Thông báo cho khách hàng bị ảnh hưởng\n- Ghi rõ: loại dữ liệu, số lượng, nguyên nhân, biện pháp khắc phục\n\n⚠️ **Ngay lập tức**:\n- Ngăn chặn rò rỉ tiếp diễn\n- Bảo toàn chứng cứ\n- Phối hợp cơ quan điều tra\n\n## VI. QUYỀN CỦA KHÁCH HÀNG\n\n### **Khách hàng có quyền**:\n1. ✓ Yêu cầu bồi thường thiệt hại\n2. ✓ Yêu cầu xóa dữ liệu cá nhân\n3. ✓ Khiếu nại lên cơ quan quản lý\n4. ✓ Khởi kiện dân sự\n5. ✓ Tố cáo hình sự (nếu có dấu hiệu phạm tội)\n6. ✓ Đơn phương chấm dứt hợp đồng\n\n## VII. TÁC ĐỘNG VỀ THUẾ\n\n### 1. **Chi phí bồi thường**\n- ❌ **KHÔNG được trừ** khi tính thuế TNDN (chi phí vi phạm pháp luật)\n- Điều 4, Thông tư 96/2015/TT-BTC\n\n### 2. **Tiền phạt hành chính**\n- ❌ **KHÔNG được trừ** khi tính thuế TNDN\n\n### 3. **Chi phí khắc phục hợp lý**\n- ✅ **Được trừ**: Chi phí nâng cấp bảo mật, tư vấn pháp lý, PR khủng hoảng\n- Điều kiện: Có chứng từ hợp lệ, liên quan hoạt động kinh doanh\n\n### 4. **Bảo hiểm**\n- ✅ Phí bảo hiểm trách nhiệm nghề nghiệp: Được trừ thuế\n- ✅ Tiền bồi thường từ bảo hiểm: Không phải nộp thuế\n\n## VIII. KHUYẾN NGHỊ PHÒNG NGỪA\n\n### **Biện pháp pháp lý**:\n1. 📋 Soạn thảo Chính sách bảo mật rõ ràng\n2. 📋 Điều khoản miễn trừ/giới hạn trách nhiệm trong hợp đồng\n3. 📋 Thỏa thuận bảo mật (NDA) với nhân viên, đối tác\n4. 📋 Đăng ký bản quyền hệ thống bảo mật\n\n### **Biện pháp kỹ thuật**:\n- Mã hóa dữ liệu\n- Kiểm soát truy cập\n- Sao lưu định kỳ\n- Kiểm toán bảo mật\n\n### **Biện pháp tàichính**:\n- Dự phòng chi phí pháp lý\n- Mua bảo hiểm cyber security\n- Quỹ khẩn cấp xử lý khủng hoảng\n\n---\n\n## KẾT LUẬN\n\n**Rò rỉ dữ liệu khách hàng là vi phạm NGHIÊM TRỌNG với hậu quả pháp lý đa chiều:**\n\n- 💰 **Tài chính**: Phạt hành chính + Bồi thường dân sự (có thể lên đến hàng tỷ đồng)\n- ⚖️ **Hìnhsự**: Người có trách nhiệm có thể bị truy cứu\n- 📉 **Kinh doanh**: Mất uy tín, khách hàng rời bỏ, đình chỉ hoạt động\n- 🚫 **Thuế**: Hầu hết chi phí liên quan KHÔNG được khấu trừ\n\n**→ Đầu tư vào bảo mật dữ liệu là BẮT BUỘC, không phải tùy chọn!**', 'tax_analysis': '', 'compliance_analysis': '', 'privacy_analysis': '', 'final_response': ''})]
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/INVALID_GRAPH_NODE_RETURN_VALUE
+During task with name 'check_routing' and id '39f751fd-22b5-32e0-fd4e-1d0e4facc875'
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python exercises/exercise_2_tools.py
+Câu hỏi: Thời hiệu khởi kiện vụ vi phạm hợp đồng là bao lâu?
+
+🔧 Gọi tool: check_statute_of_limitations
+
+✅ Kết quả:
+Theo quy định, **thời hiệu khởi kiện vụ vi phạm hợp đồng là 4 năm** (theo UCC § 2-725 - Bộ luật Thương mại Thống nhất của Mỹ).
+
+Điều này có nghĩa là bạn có tối đa 4 năm kể từ khi hành vi vi phạm hợp đồng xảy ra để khởi kiện. Sau thời hạn này, quyền khởi kiện có thể bị mất hiệu lực.
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>uv run python exercises/exercise_4_multiagent.py
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure\exercises\exercise_4_multiagent.py:16: LangGraphDeprecatedSinceV10: Importing Send from langgraph.constants is deprecated. Please use 'from langgraph.types import Send' instead. Deprecated in LangGraph V1.0 to be removed in V2.0.
+  from langgraph.constants import Send
+======================================================================
+MULTI-AGENT SYSTEM với Privacy Agent
+======================================================================
+
+Câu hỏi: Nếu công ty bị rò rỉ dữ liệu khách hàng, hậu quả pháp lý và thuế là gì?
+
+Đang xử lý qua các agents...
+
+
+======================================================================
+KẾT QUẢ CUỐI CÙNG
+======================================================================
+# BÁO CÁO PHÁP LÝ VÀ THUẾ: RÒ RỈ DỮ LIỆU KHÁCH HÀNG
+
+---
+
+## PHẦN I: TÓM TẮT ĐIỀU HÀNH
+
+Rò rỉ dữ liệu khách hàng là **vi phạm nghiêm trọng** với hậu quả pháp lý đa chiều và tác động tài chính lớn. Công ty phải đối mặt với:
+
+- **Phạt hành chính**: 50-100 triệu VNĐ (VN) hoặc đến €20 triệu/4% doanh thu (GDPR)
+- **Bồi thường dân sự**: Không giới hạn, có thể lên đến hàng tỷ đồng
+- **Trách nhiệm hình sự**: Người chịu trách nhiệm có thể bị tù đến 7-10 năm
+- **Tác động thuế**: Một số chi phí không được khấu trừ, rủi ro lộ gian lận thuế
+
+**Khuyến nghị**: Hành động ngay lập tức để tuân thủ, giảm thiểu rủi ro và bảo vệ doanh nghiệp.
+
+---
+
+## PHẦN II: TRÁCH NHIỆM PHÁP LÝ
+
+### A. TRÁCH NHIỆM DÂN SỰ
+
+#### 1. Bồi thường thiệt hại
+**Căn cứ pháp lý**: Điều 584-592 Bộ luật Dân sự 2015
+
+| Loại thiệt hại | Nội dung | Mức bồi thường |
+|----------------|----------|----------------|
+| **Vật chất** | Tổn thất tài chính trực tiếp | Theo thiệt hại thực tế |
+| **Tinh thần** | Danh dự, nhân phẩm bị xâm phạm | Tùy mức độ nghiêm trọng |
+| **Chi phí khắc phục** | Chi phí xử lý hậu quả | Theo chứng từ hợp lệ |
+
+#### 2. Vi phạm hợp đồng
+- Khách hàng có quyền đơn phương chấm dứt hợp đồng
+- Yêu cầu bồi thường do vi phạm nghĩa vụ bảo mật
+- Mất uy tín, khách hàng rời bỏ
+
+### B. TRÁCH NHIỆM HÀNH CHÍNH
+
+#### 1. Tại Việt Nam (Nghị định 13/2023/NĐ-CP)
+
+| Vi phạm | Mức phạt |
+|---------|----------|
+| Không thông báo khi xảy ra sự cố | 50-70 triệu đồng |
+| Không có biện pháp bảo vệ dữ liệu | 50-70 triệu đồng |
+| Xử lý dữ liệu trái phép | 70-100 triệu đồng |
+| Vi phạm nghiêm trọng | **Đến 5% tổng doanh thu** |
+
+**Biện pháp khắc phục bắt buộc**:
+- Thông báo công khai sự cố
+- Xóa bỏ dữ liệu thu thập trái phép
+- Đình chỉ hoạt động xử lý dữ liệu
+
+#### 2. Theo GDPR (nếu có khách hàng EU)
+
+| Cấp độ | Vi phạm | Mức phạt tối đa |
+|--------|---------|-----------------|
+| **Tier 1** | Vi phạm nghĩa vụ thông báo, đánh giá | €10 triệu HOẶC 2% doanh thu toàn cầu |
+| **Tier 2** | Vi phạm nguyên tắc xử lý, quyền chủ thể | **€20 triệu HOẶC 4% doanh thu toàn cầu** |
+
+*Áp dụng mức nào cao hơn*
+
+**Nghĩa vụ thông báo nghiêm ngặt**:
+- ⏰ Thời hạn: **72 giờ** kể từ khi phát hiện
+- 📋 Phải thông báo đầy đủ: bản chất vi phạm, hậu quả, biện pháp khắc phục
+
+### C. TRÁCH NHIỆM HÌNH SỰ
+
+**Bộ luật Hình sự 2015 (sửa đổi 2017)**:
+
+| Tội danh | Điều luật | Khung hình phạt |
+|----------|-----------|-----------------|
+| **Xâm phạm bí mật đời tư** | Điều 226 | Phạt tiền 10-50 triệu hoặc tù đến 3 năm<br>Tình tiết tăng nặng: Tù 2-7 năm |
+| **Chiếm đoạt, mua bán trái phép thông tin** | Điều 227 | Tù đến 7 năm<br>Có tổ chức: Tù 5-10 năm |
+| **Làm lộ bí mật công tác** | Điều 430 | Nếu dữ liệu có tính chất bí mật nhà nước |
+
+---
+
+## PHẦN III: TÁC ĐỘNG THUẾ
+
+### A. CHI PHÍ ĐƯỢC KHẤU TRỪ THUẾ TNDN
+
+**Căn cứ**: Điều 4, Thông tư 96/2015/TT-BTC
+
+| Loại chi phí | Khấu trừ | Điều kiện |
+|--------------|----------|-----------|
+| ✅ Bồi thường khách hàng | **CÓ** | Có hợp đồng, chứng từ hợp lệ |
+| ✅ Bồi thường theo phán quyết tòa | **CÓ** | Có bản án/quyết định |
+| ✅ Nâng cấp hệ thống bảo mật | **CÓ** | Khấu hao nếu >30 triệu |
+| ✅ Tư vấn pháp lý | **CÓ** | Có hợp đồng, hóa đơn |
+| ✅ Chi phí thông báo, PR | **CÓ** | Hợp lý, có chứng từ |
+| ✅ Đào tạo nhân viên | **CÓ** | Chi phí đào tạo hợp lệ |
+| ✅ Bảo hiểm cyber | **CÓ** | Phí bảo hiểm hợp lệ |
+
+### B. CHI PHÍ KHÔNG ĐƯỢC KHẤU TRỪ
+
+**Căn cứ**: Điều 6, Thông tư 96/2015/TT-BTC
+
+| Loại chi phí | Lý do |
+|--------------|-------|
+| ❌ Tiền phạt vi phạm hành chính | Khoản 4, Điều 6 |
+| ❌ Tiền phạt GDPR | Tính chất trừng phạt |
+| ❌ Tiền phạt chậm nộp thuế | Khoản 4, Điều 6 |
+| ❌ Bồi thường do cố ý vi phạm | Không liên quan SXKD |
+
+### C. VÍ DỤ TÍNH TOÁN
+
+```
+Tổng chi phí sự cố: 5 tỷ đồng
+├─ Bồi thường khách hàng: 3 tỷ        → ✅ Được trừ
+├─ Phạt hành chính: 100 triệu         → ❌ KHÔNG được trừ
+├─ Nâng cấp bảo mật: 1.5 tỷ           → ✅ Được trừ
+└─ Tư vấn pháp lý: 400 triệu          → ✅ Được trừ
+
+Chi phí được trừ thuế: 4.9 tỷ
+Tiết kiệm thuế (20%): 980 triệu đồng
+Chi phí thực tế sau thuế: 4.12 tỷ đồng
+```
+
+### D. RỦI RO THUẾ NGHIÊM TRỌNG
+
+🚨 **Nguy cơ cao nhất**: Rò rỉ dữ liệu làm lộ gian lận thuế
+
+**Kịch bản nguy hiểm**:
+```
+Rò rỉ dữ liệu → Cơ quan thuế phát hiện:
+├─ Doanh thu thực tế cao hơn khai báo
+├─ Giao dịch không kê khai
+├─ Hóa đơn khống
+└─ Chuyển giá bất hợp lý
+```
+
+**Hậu quả**:
+
+| Vi phạm | Xử lý |
+|---------|-------|
+| Khai thiếu doanh thu | Truy thu thuế + phạt 20% + 0.03%/ngày chậm nộp |
+| Trốn thuế có dấu hiệu hình sự | Tù 6 tháng - 20 năm (Điều 200, 201 BLHS) |
+
+**Ví dụ thực tế**:
+- Khai doanh thu: 50 tỷ/năm
+- Thực tế (lộ qua rò rỉ): 80 tỷ/năm
+- **Hậu quả**: Truy thu + phạt ≈ **1.84 tỷ đồng** + có thể bị truy cứu hình sự
+
+---
+
+## PHẦN IV: NGHĨA VỤ PHÁP LÝ KHI XẢY RA SỰ CỐ
+
+### A. NGHĨA VỤ THÔNG BÁO
+
+| Đối tượng | Thời hạn | Nội dung |
+|-----------|----------|----------|
+| **Cơ quan quản lý** | 72 giờ (GDPR)<br>Ngay lập tức (VN) | Bản chất sự cố, dữ liệu bị ảnh hưởng, biện pháp khắc phục |
+| **Khách hàng** | Ngay lập tức | Thông tin chi tiết về sự cố, cách thức bảo vệ |
+
+### B. NGHĨA VỤ KHẮC PHỤC
+
+1. ✓ Ngăn chặn rò rỉ tiếp diễn
+2. ✓ Điều tra nguyên nhân
+3. ✓ Báo cáo kết quả điều tra
+4. ✓ Bồi thường thiệt hại
+5. ✓ Cải thiện hệ thống bảo mật
+
+---
+
+## PHẦN V: QUYỀN CỦA KHÁCH HÀNG
+
+### Khách hàng có quyền:
+
+1. ✓ Được thông báo về sự cố
+2. ✓ Yêu cầu công ty xóa dữ liệu
+3. ✓ Khiếu nại, tố cáo
+4. ✓ Yêu cầu bồi thường thiệt hại
+5. ✓ Khởi kiện dân sự
+6. ✓ Tố giác tội phạm nếu có dấu hiệu hình sự
+
+### Theo GDPR (nếu có khách hàng EU):
+
+| Quyền | Nội dung |
+|-------|----------|
+| Right to be informed | Được thông tin về việc xử lý |
+| Right of access | Truy cập dữ liệu của mình |
+| Right to erasure | "Quyền bị quên" - xóa dữ liệu |
+| Right to compensation | Bồi thường không giới hạn |
+
+---
+
+## PHẦN VI: TÍNH TOÁN RỦI RO TÀI CHÍNH
+
+### A. KỊCH BẢN RỦI RO (Công ty 100,000 khách hàng, doanh thu 50 tỷ/năm)
+
+#### **Kịch bản 1: Vi phạm nhẹ**
+```
+- Phạt hành chính (VN): 70 triệu
+- Bồi thường: 1,000 khách x 5 triệu = 5 tỷ
+- Chi phí pháp lý: 500 triệu
+- Chi phí khắc phục: 1 tỷ
+TỔNG: ≈ 6.57 tỷ đồng
+```
+
+#### **Kịch bản 2: Vi phạm nghiêm trọng**
+```
+- Phạt hành chính: 5% x 50 tỷ = 2.5 tỷ
+- Bồi thường: 50,000 khách x 10 triệu = 500 tỷ
+- Chi phí pháp lý: 5 tỷ
+- Chi phí khắc phục: 3 tỷ
+- Mất khách hàng: 20 tỷ/năm
+TỔNG: ≈ 530+ tỷ đồng
+```
+
+#### **Kịch bản 3: Vi phạm GDPR (có khách EU)**
+```
+- Phạt GDPR: €20 triệu (≈ 550 tỷ VNĐ)
+- Bồi thường class action: €100 triệu (≈ 2,750 tỷ)
+- Chi phí pháp lý: €5 triệu (≈ 137 tỷ)
+- Thiệt hại thương hiệu: Không thể định lượng
+TỔNG: ≈ 3,500+ tỷ đồng → Nguy cơ phá sản
+```
+
+### B. SO SÁNH VỚI CHI PHÍ TUÂN THỦ
+
+| Khoản mục | Chi phí/năm |
+|-----------|-------------|
+| Hệ thống bảo mật | 2-5 tỷ (năm đầu) |
+| Đào tạo nhân viên | 200-500 triệu |
+| Tư vấn pháp lý | 300-800 triệu |
+| Bảo hiểm cyber | 500 triệu - 1 tỷ |
+| Kiểm toán định kỳ | 300-500 triệu |
+| **TỔNG** | **3-8 tỷ (năm đầu)**<br>**1-3 tỷ/năm sau** |
+
+**→ ROI rõ ràng: Chi phí tuân thủ << Rủi ro vi phạm**
+
+---
+
+## PHẦN VII: KHUYẾN NGHỊ HÀNH ĐỘNG
+
+### A. BIỆN PHÁP PHÒNG NGỪA (Nếu chưa có sự cố)
+
+#### 1. **Biện pháp kỹ thuật**
+```
+✓ Mã hóa dữ liệu (at rest & in transit)
+✓ Multi-factor authentication
+✓ Access control nghiêm ngặt
+✓ Intrusion Detection/Prevention Systems
+✓ Regular security patches & updates
+✓ Data Loss Prevention (DLP) tools
+✓ Secure backup & disaster recovery
+✓ Penetration testing định kỳ
+```
+
+#### 2. **Biện pháp tổ chức**
+```
+✓ Xây dựng Data Protection Policy
+✓ Chỉ định Data Protection Officer (nếu cần)
+✓ Ký cam kết bảo mật với nhân viên
+✓ Đào tạo nhân viên định kỳ
+✓ Kiểm toán an ninh mạng định kỳ
+✓ Xây dựng Incident Response Plan
+✓ Background check nhân viên
+```
+
+#### 3. **Biện pháp pháp lý**
+```
+✓ Review & update Privacy Policy
+✓ Data Processing Agreements với đối tác
+✓ Mua bảo hiểm cyber
+✓ Điều khoản giới hạn trách nhiệm trong hợp đồng
+✓ Cơ chế giải quyết tranh chấp
+```
+
+### B. KẾ HOẠCH ỨNG PHÓ SỰ CỐ (Nếu đã xảy ra)
+
+#### **Phase 1: Phát hiện & Đánh giá (0-2 giờ)**
+```
+1. Kích hoạt Incident Response Team
+2. Đánh giá sơ bộ mức độ nghiêm trọng
+3. Ghi chép đầy đủ
+4. Thông báo ban lãnh đạo
+```
+
+#### **Phase 2: Ngăn chặn (2-24 giờ)**
+```
+1. Ngăn chặn rò rỉ tiếp diễn
+2. Cô lập hệ thống bị ảnh hưởng
+3. Bảo toàn bằng chứng
+4. Liên hệ luật sư & chuyên gia bảo mật
+```
+
+#### **Phase 3: Thông báo (24-72 giờ)**
+```
+1. Thông báo cơ quan quản lý (72 giờ nếu GDPR)
+2. Thông báo khách hàng bị ảnh hưởng
+3. Thông báo bảo hiểm
+4. Chuẩn bị thông cáo báo chí (nếu cần)
+```
+
+#### **Phase 4: Điều tra & Khắc phục**
+```
+1. Điều tra nguyên nhân gốc rễ
+2. Đánh giá thiệt hại đầy đủ
+3. Thực hiện biện pháp khắc phục
+4. Cập nhật thông tin cho các bên
+5. Chuẩn bị báo cáo chi tiết
+```
+
+#### **Phase 5: Phục hồi & Rút kinh nghiệm**
+```
+1. Khôi phục hoạt động bình thường
+2. Xem xét và cập nhật chính sách
+3. Đào tạo bổ sung
+4. Cải thiện biện pháp bảo mật
+5. Lưu trữ hồ sơ sự cố
+```
+
+### C. CHECKLIST HÀNH ĐỘNG NGAY
+
+#### **Trong vòng 24 giờ:**
+- [ ] Liên hệ luật sư chuyên ngành
+- [ ] Liên hệ chuyên gia bảo mật
+- [ ] Đánh giá nghĩa vụ thông báo
+- [ ] Ngăn chặn rò rỉ tiếp diễn
+- [ ] Bảo toàn bằng chứng
+
+#### **Trong vòng 72 giờ:**
+- [ ] Thông báo cơ quan quản lý (nếu GDPR)
+- [ ] Thông báo khách hàng
+- [ ] Thông báo bảo hiểm
+- [ ] Phân loại chi phí (thuế)
+- [ ] Rà soát dữ liệu rò rỉ vs sổ sách
+
+#### **Trong vòng 30 ngày:**
+- [ ] Hoàn thiện hồ sơ kế toán
+- [ ] Lập báo cáo giải trình cho thuế
+- [ ] Chuẩn bị kịch bản nếu bị kiểm tra
+- [ ] Thực hiện biện pháp khắc phục
+- [ ] Báo cáo kết quả điều tra
+
+---
+
+## PHẦN VIII: KẾT LUẬN
+
+### A. TÓM TẮT RỦI RO
+
+| Loại hậu quả | Mức độ | Tác động tài chính |
+|--------------|--------|-------------------|
+| **Phạt hành chính** | 🚨 CAO | 70-100 triệu (VN)<br>Đến €20M/4% doanh thu (GDPR) |
+| **Bồi thường dân sự** | 🚨 CỰC CAO | Không giới hạn, có thể phá sản |
+| **Hình sự** | ⚠️ TRUNG BÌNH | Tù 2-10 năm |
+| **Thuế** | 🚨 CAO | Phạt không được trừ + rủi ro lộ gian lận |
+| **Thương hiệu** | 🚨 CỰC CAO | Mất khách hàng, uy tín |
+
+### B. THÔNG ĐIỆP CHÍNH
+
+```
+⚠️ RỦI RO LỚN NHẤT:
+Không phải chi phí bồi thường hay phạt,
+mà là:
+1. Rủi ro lộ thông tin gian lận thuế
+2. Thiệt hại thương hiệu không thể phục hồi
+3. Nguy cơ phá sản doanh nghiệp
+```
+
+### C. HÀNH ĐỘNG ƯU TIÊN
+
+**🎯 Nếu CHƯA có sự cố:**
+1. Đầu tư vào bảo mật NGAY (3-8 tỷ năm đầu)
+2. Xây dựng Incident Response Plan
+3. Mua bảo hiểm cyber
+4. Đào tạo nhân viên thường xuyên
+
+**🚨 Nếu ĐÃ có sự cố:**
+1. Liên hệ luật sư + chuyên gia bảo mật NGAY
+2. Thông báo trong 72 giờ (GDPR)
+3. Ngăn chặn rò rỉ tiếp diễn
+4. Rà soát dữ liệu vs sổ sách thuế
+5. Chuẩn bị nguồn lực tài chính
+
+---
+
+## PHỤ LỤC: THÔNG TIN LIÊN HỆ KHẨN CẤP
+
+### Cơ quan quản lý tại Việt Nam:
+- **Cục An toàn thông tin** (Bộ TT&TT)
+- **Thanh tra Bộ TT&TT**
+- **Cục Thuế** (nếu liên quan thuế)
+
+### Dịch vụ cần thiết:
+- Luật sư chuyên ngành bảo vệ dữ liệu
+- Chuyên gia bảo mật mạng
+- Kế toán/Tư vấn thuế
+- Công ty bảo hiểm cyber
+- Công ty PR khủng hoảng
+
+---
+
+**LƯU Ý QUAN TRỌNG**:
+- Mỗi trường hợp cụ thể cần tư vấn riêng
+- Luật pháp thay đổi thường xuyên
+- Chi phí tư vấn << Rủi ro tiềm ẩn
+- Hành động nhanh = Giảm thiểu thiệt hại
+
+**Báo cáo này chỉ mang tính chất tham khảo. Vui lòng tư vấn luật sư và chuyên gia thuế cho trường hợp cụ thể.**
+
+---
+
+*Ngày lập báo cáo: [Ngày hiện tại]*
+*Phiên bản: 1.0*
+
+======================================================================
+
+F:\hoc\vin\Day26-Track03-MCP_and_A2A_Infrastructure>
